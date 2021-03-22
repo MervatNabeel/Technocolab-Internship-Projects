@@ -121,6 +121,6 @@ size="25"><br><br>
 <button type="submit">Get Type</button>
 
 </form>
-<h2 align="center"><b>{{ pred }}</b></h2><br><br><br>
+<h1 align="center"><b>{{ pred }}</b></h1><br><br><br>
 </body>
 </html>
