@@ -1,9 +1,126 @@
+<html>
+<head>
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+</style>
+</head>
+<body>
+
+<h1>Classify Song Genres from Audio Data</h1>
+
+
+
 <form action="{{ url_for("predict")}}" method="post"> 
-<label for="firstname">First Name:</label> 
-<input type="text" id="firstname" name="fname" placeholder="firstname"> 
-<label for="lastname">Last Name:</label> 
-<input type="text" id="lastname" name="lname" placeholder="lastname"> 
-<button type="submit">Login</button> 
-<label for="birthdaytime">Birthday (date and time):</label>
-<input type="datetime-local" id="birthdaytime" name="birthdaytime">
+
+<tr>
+<td>Title:</td> 
+<td> <input type="text" id="title" name="title" placeholder="title" size="20"/></td>
+</tr><br><br>
+
+<label for="bit_rate">Bit Rate:</label>
+<input type="number" id="bit_rate" name="bit_rate" placeholder="(10000 : 1000000)" min="10000" max="1000000" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="comments">Number of Comments:</label>
+<input type="number" id="comments" name="comments" placeholder="(0 : 100)" min="0" max="100" size="25"><br><br>
+
+<label for="date_created">Date Created:</label>
+<input type="datetime-local" id="date_created" name="date_created" placeholder="(date and time)" 
+
+size="10">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="date_recorded">Date Recorded:</label>
+<input type="datetime-local" id="date_recorded" name="date_recorded" placeholder="(date and time)" size="10"><br><br>
+
+<label for="duration">Duration:</label>
+<input type="number" id="duration" name="duration" placeholder="(0 : 10000)" min="0" max="10000" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="favorites">Number of Favorites:</label>
+<input type="number" id="favorites" name="favorites" placeholder="(0 : 1000)" min="0" max="1000" size="25"><br><br> 
+
+<label for="genres_all">All the Genres:</label> 
+<input type="text" id="genres_all" name="genres_all" placeholder="[ , , ]" size="20">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="interest">Number of Interests:</label>
+<input type="number" id="interest" name="interest" placeholder="(0 : 2000000)" min="0" max="2000000" size="25"><br><br>
+
+<label for="combo">Language Code:</label>
+<input type="text" name="combo" list="language_code"/>
+ <datalist id="language_code">
+    <option>cs</option>
+    <option>de</option>
+    <option>en</option>
+    <option>es</option>
+    <option>fr</option>
+    <option>id</option>
+    <option>it</option>
+    <option>nl</option>
+    <option>pt</option>
+    <option>ru</option>
+    <option>sr</option>
+    <option>tr</option>
+    <option>zh</option>
+ </datalist>&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="listens">Number of Listens:</label>
+<input type="number" id="listens" name="listens" placeholder="(0 : 1000000)" min="0" max="1000000" size="25"><br><br>
+
+<label for="number">Number:</label>
+<input type="number" id="number" name="number" placeholder="(0 : 100)" min="0" max="100" size="25"><br><br>
+
+
+<label for="acousticness">Acousticness:</label>
+<input type="number" id="acousticness" name="acousticness" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="danceability">Danceability:</label>
+<input type="number" id="danceability" name="danceability" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25"><br><br>
+
+<label for="energy">Energy:</label>
+<input type="number" id="energy" name="energy" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="instrumentalness">Instrumentalness:</label>
+<input type="number" id="instrumentalness" name="instrumentalness" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" 
+
+max="1.0" size="25"><br><br>
+
+<label for="liveness">Liveness:</label>
+<input type="number" id="liveness" name="liveness" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="speechiness">Speechiness:</label>
+<input type="number" id="speechiness" name="speechiness" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25"><br><br>
+
+<label for="tempo">Tempo:</label>
+<input type="number" id="tempo" name="tempo" step=0.0000000001 placeholder="(0.0 : 500.0)" min="0.0" max="500.0" 
+
+size="25">&nbsp;&nbsp;&nbsp;&nbsp
+
+<label for="valence">Valence:</label>
+<input type="number" id="valence" name="valence" step=0.0000000001 placeholder="(0.0 : 1.0)" min="0.0" max="1.0" 
+
+size="25"><br><br>
+
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit">Get Type</button>
+
 </form>
+<h2 align="center"><b>{{ pred }}</b></h2><br><br><br>
+</body>
+</html>
